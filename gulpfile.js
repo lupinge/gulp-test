@@ -1,27 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var htmlmin = require('gulp-htmlmin');
-var imagemin = require('gulp-imagemin');
+//var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync');
-
-//压缩html
-// gulp.task('htmlmin', function () {
-//     var options = {
-//         removeComments: true,//清除HTML注释
-//         collapseWhitespace: true,//压缩HTML
-//         collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
-//         removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
-//         removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
-//         removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"
-//         minifyJS: true,//压缩页面JS
-//         minifyCSS: true//压缩页面CSS
-//     };
-//     gulp.src('app/*.html')
-//         .pipe(htmlmin(options))
-//         .pipe(gulp.dest('build'));
-// });
 
 
 //移动HTML
@@ -66,21 +47,6 @@ gulp.task('movejs', function() {
 });
 
 
-//压缩图片
-// gulp.task('imagemin', function() {
-//     return gulp.src('app/img/*.{png,jpg,gif,ico}')
-//         .pipe(imagemin(
-//             {
-//                 optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
-//                 progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
-//                 interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
-//                 multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
-//             }
-//         ))
-//         .pipe(gulp.dest('build/img'))
-// });
-
-
 //移动图片
 gulp.task('moveimg', function() {
     return gulp.src('app/img/*')
@@ -96,7 +62,6 @@ gulp.task('browserSync', function() {
         }
     });
 });
-
 
 
 //watch监听
